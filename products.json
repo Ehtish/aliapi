@@ -1,0 +1,26 @@
+[
+  {
+    "name": "iPhone 12 Pro",
+    "price": 999,
+    "feature": true,
+    "company": "apple"
+  },
+  {
+    "name": "Galaxy S21 Ultra",
+    "price": 1199,
+    "feature": true,
+    "company": "samsung"
+  },
+  {
+    "name": "Dell XPS 13",
+    "price": 1299,
+    "feature": false,
+    "company": "dell"
+  },
+  {
+    "name": "Redmi Note 10 Pro",
+    "price": 299,
+    "feature": true,
+    "company": "mi"
+  }
+]
