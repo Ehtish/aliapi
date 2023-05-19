@@ -26,12 +26,19 @@ const getAllProducts = async (req, res) => {
     apiData = apiData.select(selectfix);
   }
 
-  const myData = await apiData;
+  let page = Number(req.query.page) || 1;
+  let limit = Number(req.query.limit) || 10;
+
+  let skip = (page - 1) * limit;
+
+  apiData = apiData.skip(skip).limit(limit);
+
+  const Products = await apiData;
   // const myData = await Product.find({ name: "iPhone 12 Pro" }); // search by name
-  res.status(200).json({ myData });
+  res.status(200).json({ Products, nbHits: Products.length });
 };
 const getAllProductsTesting = async (req, res) => {
-  const myData = await Product.find(req.query).select("name company");
+  const myData = await Product.find(req.query).skip(2);
   // res.status(200).json({ msg: "I am getAllProductsTesting" });
   res.status(200).json({ myData });
 };
